@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import '../assets/sass/star.scss';
 
 const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
@@ -16,6 +18,12 @@ const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
       </g>
     </svg>
   )
+}
+
+StarSvg.propTypes = {
+  id: PropTypes.number,
+  onClickCallback: PropTypes.function,
+  isActiveCallBack: PropTypes.function
 }
 
 export default StarSvg;

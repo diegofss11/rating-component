@@ -32,11 +32,11 @@ class StarRating extends Component {
         disabledClass: '',
         isNonInteractive: true
       })
-    }  , 1);
+    }  , 3000);
   }
   
   render() {
-    const {title, submitText, successMessage, numberOfStars} = this.props;
+    const {description, textButton, successMessage, numberOfStars} = this.props;
     const messageSubmit = this.state.isSubmitted ? 'fade-in' : 'fade-out';
     const isEditable = this.state.isSubmitted && 'disabled';
 
@@ -51,13 +51,13 @@ class StarRating extends Component {
       if(!this.state.isNonInteractive) {
         return (
           <div className={`container ${isEditable}`}>
-            <div className="title">{title}</div>
+            <div className="description">{description}</div>
             <div className="stars-container">
               {createStars(numberOfStars)}
             </div>
 
             <button disabled={this.state.disabledClass} type="button" onClick={this.submitRating} className="primary-button">
-              { submitText }
+              { textButton }
             </button>
           </div>
         )
@@ -85,17 +85,17 @@ class StarRating extends Component {
 }
 
 StarRating.propTypes = {
-  title: PropTypes.string,
-  submitText: PropTypes.string,
+  description: PropTypes.string,
+  textButton: PropTypes.string,
   successMessage: PropTypes.string,
   numberOfStars: validateNumberOfStars
 }
 
 StarRating.defaultProps = {
-  title: 'Rate this product',
-  submitText: 'Apply',
-  successMessage: 'Thanks for your rating',
-  numberOfStars: (a, b, c) => console.log(a, b, c)
+  description: 'Rate this product',
+  textButton: 'Apply',
+  successMessage: 'Thanks for your rating!',
+  numberOfStars: 5
 };
 
 export default StarRating;
