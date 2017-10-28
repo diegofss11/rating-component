@@ -1,59 +1,50 @@
+@import 'variables';
+
 .rating-component {
+  font-family: $font-primary;
+  color: #4A4A4A;
+
   display: flex;
   flex-direction: column;
-
-  color: #4A4A4A;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  @media (max-width:768px) {
-    .message-container {
-      flex: 1;
-      width: auto;
-    }
-
-    .container {
-      align-items: center;
-      width: auto;
-
-      .primary-button {
-        width: 100%;
-      }
-
-      &.non-interactive {
-        width: auto;
-      }
-    }
-  }
 }
 
 .container {
   padding: 30px 25px 25px;
   width: 175px;
+
   border: 1px solid #D2D0D2;
   border-radius: 5px;
   box-shadow: inset 0 0 4px 1px #C7C6C8;
 
-  &.non-interactive {
-    display: flex;
-    flex-direction: row;
-
-    padding: 25px;
+  @media (max-width:768px) {
     align-items: center;
-    width: 310px;
-  
-    .stars-container {
-      display: inline-flex;
-      margin-left: 15px;
-      margin-top: 0;
+    width: auto;
+  }
+}
 
-      > .star-wrapper {
-        margin: 0 2px;
-      }
-    }
+.non-interactive {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    .star-wrapper {
-      width: 22px;
-      height: 20px;
+  padding: 25px;
+  width: 310px;
+
+  > .stars-container {
+    display: inline-flex;
+    margin-left: 15px;
+    margin-top: 0;
+  }
+
+  > .star {
+    width: 22px;
+    height: 20px;
+    margin: 0 2px;
+    cursor: auto;
+
+    &:hover:not(.active),
+    &:focus:not(.active) {
+      fill: $color-default-star;
     }
   }
 }
@@ -64,51 +55,67 @@
 }
 
 .primary-button {
-  margin-top: 20px;
   font-size: 14px;
+  margin-top: 20px;
   padding: 5px 25px;
-  background: white;
+  width: 80px;
+  
   border-radius: 5px;
   border: 1px solid #D2D0D2;
   cursor: pointer;
-  width: 80px;
+  background: white;
+
+  @media (max-width:768px) {
+    width: 100%;
+  }
 }
 
 .message-container {
   font-size: 14px;
-  font-weight: 600;
   width: 175px;
   margin-bottom: 10px;
   padding: 15px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+
   text-align: center;
   color: white;
-  border-radius: 5px;
+
+  @media (max-width:768px) {
+    flex: 1;
+    width: auto;
+  }
 }
 
 .stars-container {
   display: flex;
   justify-content: flex-end;
   flex-direction: row-reverse;
+
   margin-top: 20px;
 
-  > .star-wrapper {
+  > .star {
     margin: 0 5px;
 
     &:hover,
     &:focus {
-      ~ .star-wrapper .star {
-        fill: #4A90E2;
+      ~ .star {
+        fill: $color-active-star;
       }
     }
   }
 }
 
 .disabled {
-  color: #B4B4B4;
+  color: $color-disabled;
+  
+  .star {
+    opacity: 0.4;
+  }
 }
 
 .success {
-  background: #7ED321;
+  background: $color-success;
 }
 
 // EFFECTS

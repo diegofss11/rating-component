@@ -1,31 +1,15 @@
-.star-wrapper {
+@import 'variables';
+
+.star {
   width: 28px;
   height: 25px;
+  fill: $color-default-star;
 
+  cursor: pointer;
+  
   &:hover,
-  &:focus {
-    cursor: pointer;
-
-    .star {
-      fill: #4A90E2;
-    }
-  }
-
-  .star {
-    fill: #E3E6E9;
-  }
-
+  &:focus,
   &.active {
-    .star {
-      fill: #4A90E2;
-    }
-  }
-}
-
-.disabled {
-  star-wrapper {
-    .star {
-      opacity: 0.4;
-    }
+    fill: $color-active-star;
   }
 }

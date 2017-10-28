@@ -38,7 +38,7 @@ class StarRating extends Component {
   render() {
     const {description, textButton, successMessage, numberOfStars} = this.props;
     const messageSubmit = this.state.isSubmitted ? 'fade-in' : 'fade-out';
-    const isEditable = this.state.isSubmitted && 'disabled';
+    const isEditable = this.state.isSubmitted ? 'disabled' : '';
 
     const createStars = (numberOfStars) => {
       //creates an inversed array from integer number with 1-based index
