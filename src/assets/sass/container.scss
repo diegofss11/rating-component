@@ -45,6 +45,10 @@
       display: inline-flex;
       margin-left: 15px;
       margin-top: 0;
+
+      > .star-wrapper {
+        margin: 0 2px;
+      }
     }
 
     .star-wrapper {
@@ -88,7 +92,7 @@
   margin-top: 20px;
 
   > .star-wrapper {
-    margin: 0 2px;
+    margin: 0 5px;
 
     &:hover,
     &:focus {

@@ -21,8 +21,8 @@ describe('Validations', () => {
       expect(validateNumberOfStars(props, propName, componentName)).not.to.be.null
     });
   
-    it('should not accept numbers higher than 10', () => {
-      let props = { numberOfStars: 11 };
+    it('should not accept numbers higher than 7', () => {
+      let props = { numberOfStars: 8 };
       expect(validateNumberOfStars(props, propName, componentName)).not.to.be.null;
     });
   })
