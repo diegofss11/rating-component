@@ -1,13 +1,24 @@
-# Star Rating Component
+<h1><p align="center">:rage: <---- Rating Component ----> :satisfied:</p></h1>
 
-# To run locally
+### Before you start
+
+Make sure you have [Node.js](https://nodejs.org/en/) installed.
+
+### Getting started
 - `npm install`
 
-- `npm run start` - starts the application
-- `npm run test` - runs the tests
+- `npm run start` - starts the application locally
+
+### Other commands...
+```shell
+$ npm test                      # Run the tests
+$ npm build                     # Create dist folder with index and .js files
+```
+
 
 # Usage
-` <StarRating />`
+-Default usage ` <StarRating />`
+-Custom usage ` <StarRating textButton="Submit Review" numberOfStars="7"/>`
 
 
 * `description` -- Description to display. The default is `Rate this product`.
