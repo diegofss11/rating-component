@@ -21,9 +21,7 @@ const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
 }
 
 StarSvg.propTypes = {
-  id: PropTypes.number,
-  onClickCallback: PropTypes.function,
-  isActiveCallBack: PropTypes.function
+  id: PropTypes.number
 }
 
 export default StarSvg;
