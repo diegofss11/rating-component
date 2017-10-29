@@ -14,7 +14,7 @@ describe('<StarSvg />', () => {
     expect(component.type).to.be.equal('svg')
     expect(component.props.id).to.be.equal('star-1')
     expect(component.props.tabIndex).to.be.equal(1)
-    expect(component.props.className).to.be.equal('star-wrapper active')
+    expect(component.props.className).to.be.equal('star active')
     expect(component.props.onClick).not.to.be.undefined
   });
 });
