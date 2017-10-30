@@ -1,15 +1,15 @@
-@import 'variables';
-
 .star {
   width: 28px;
   height: 25px;
   fill: $color-default-star;
-
   cursor: pointer;
-  
+
   &:hover,
-  &:focus,
-  &.active {
-    fill: $color-active-star;
+  &:focus {
+    fill: $color-active-star;    
   }
+}
+
+.star.active {
+  fill: $color-active-star;
 }

@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-import '../assets/sass/star.scss';
-
 const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
-  const isActive = isActiveCallBack(id);
   const activeClass = isActiveCallBack(id)? 'active' : '';
   
   return (

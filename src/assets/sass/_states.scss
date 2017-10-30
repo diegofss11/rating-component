@@ -1,0 +1,36 @@
+.container.disabled {
+  color: $color-disabled;
+
+  .star,
+  .primary-button {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+.container.non-interactive {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 25px;
+  width: 310px;
+
+  .stars-container {
+    display: inline-flex;
+    margin-left: 15px;
+    margin-top: 0;
+  }
+
+  .star {
+    width: 22px;
+    height: 20px;
+    margin: 0 2px;
+    
+    pointer-events: none;
+  }
+}
+
+.success {
+  background: $color-success;
+}

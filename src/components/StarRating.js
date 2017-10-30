@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import StarSvg from './StarSvg';
 import {validateNumberOfStars} from '../validations'
-import '../assets/sass/container.scss';
+import '../assets/sass/index.scss';
 
 class StarRating extends Component {
   constructor() {
@@ -11,24 +11,24 @@ class StarRating extends Component {
 
     this.state = {
       rating: 0,
-      isSubmitted: false,
+      isConfirmationMessageVisible: false,
       disabledClass: ''
     }
   }
 
   changeRating = (newRating) => this.setState({ rating: newRating })
 
-  isActive = (starId) => starId <= this.state.rating
+  isActive = (starId) => starId <= this.state.rating;
 
   submitRating = (event) => {
     this.setState({
-      isSubmitted: true,
+      isConfirmationMessageVisible: true,
       disabledClass: 'disabled'
     });
 
     setTimeout(() => {
       this.setState({ 
-        isSubmitted: false,
+        isConfirmationMessageVisible: false,
         disabledClass: '',
         isNonInteractive: true
       })
@@ -37,8 +37,8 @@ class StarRating extends Component {
   
   render() {
     const {description, textButton, successMessage, numberOfStars} = this.props;
-    const messageSubmit = this.state.isSubmitted ? 'fade-in' : 'fade-out';
-    const isEditable = this.state.isSubmitted ? 'disabled' : '';
+    const fadeEffectClass = this.state.isConfirmationMessageVisible ? 'fade-in' : 'fade-out';
+    const isEditable = this.state.isConfirmationMessageVisible ? 'disabled' : '';
 
     const createStars = (numberOfStars) => {
       //creates an inversed array from integer number with 1-based index
@@ -75,7 +75,7 @@ class StarRating extends Component {
 
     return (
       <div className="rating-component">
-        <div className={`message-container ${messageSubmit} success`}>
+        <div className={`message-container ${fadeEffectClass} success`}>
           {successMessage}
         </div>
         {getMainTemplate()}
