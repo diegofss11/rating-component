@@ -39,23 +39,20 @@ class StarRating extends Component {
     const {description, textButton, successMessage, numberOfStars} = this.props;
     const fadeEffectClass = this.state.isConfirmationMessageVisible ? 'fade-in' : 'fade-out';
     const isEditable = this.state.isConfirmationMessageVisible ? 'disabled' : '';
-
-    const createStars = (numberOfStars) => {
-      //creates an inversed array from integer number with 1-based index
-      const starArray = Array.from( new Array(numberOfStars) , (val,index) => index+1 ).reverse();
-
-      return starArray.map((starId) => <StarSvg key={starId} id={starId} isActiveCallBack={this.isActive} onClickCallback={this.changeRating} /> )
-    }
+    const starArray = Array.from( new Array(numberOfStars) , (val,index) => index+1 ).reverse();
 
     const getMainTemplate = () => {
+      const starsContainers =
+        <div className="stars-container">
+          { starArray.map((starId) =>
+            <StarSvg key={starId} id={starId} isActiveCallBack={this.isActive} onClickCallback={this.changeRating} />)}
+        </div>
+
       if(!this.state.isNonInteractive) {
         return (
           <div className={`container ${isEditable}`}>
             <div className="description">{description}</div>
-            <div className="stars-container">
-              {createStars(numberOfStars)}
-            </div>
-
+            { starsContainers }
             <button disabled={this.state.disabledClass} type="button" onClick={this.submitRating} className="primary-button">
               { textButton }
             </button>
@@ -65,9 +62,7 @@ class StarRating extends Component {
         return (
           <div className="container non-interactive">
             <div className="rating-description"> Average Rating</div>
-            <div className="stars-container">
-              {createStars(numberOfStars)}
-            </div>
+            { starsContainers }
           </div>
         )
       }
