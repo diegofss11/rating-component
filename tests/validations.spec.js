@@ -1,4 +1,4 @@
-import {validateNumberOfStars} from './validations';
+import {validateNumberOfStars} from '../src/validations';
 import {expect} from 'chai';
 
 describe('Validations', () => {

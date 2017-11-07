@@ -1,11 +1,11 @@
-import {Component} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { string } from 'prop-types';
 
 import StarSvg from './StarSvg';
 import {validateNumberOfStars} from '../validations'
 import '../assets/sass/index.scss';
 
-class StarRating extends Component {
+class StarRating extends React.Component {
   constructor() {
     super()
 
@@ -80,9 +80,9 @@ class StarRating extends Component {
 }
 
 StarRating.propTypes = {
-  description: PropTypes.string,
-  textButton: PropTypes.string,
-  successMessage: PropTypes.string,
+  description: string,
+  textButton: string,
+  successMessage: string,
   numberOfStars: validateNumberOfStars
 }
 

@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import React from 'react';
+import { number, func } from 'prop-types';
 
 const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
   const activeClass = isActiveCallBack(id)? 'active' : '';
@@ -18,9 +19,9 @@ const StarSvg = ({id, onClickCallback, isActiveCallBack}) => {
 }
 
 StarSvg.propTypes = {
-  id: PropTypes.number,
-  onClickCallback: PropTypes.func,
-  isActiveCallBack: PropTypes.func
+  id: number,
+  onClickCallback: func,
+  isActiveCallBack: func
 }
 
 export default StarSvg;

@@ -1,8 +1,8 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import StarRating from './components/StarRating';
 
-window.React = React
+// window.React = React
 
-render(<StarRating />, document.getElementById('root'));
+ReactDOM.render(<StarRating />, document.getElementById('root'));

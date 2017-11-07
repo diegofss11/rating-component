@@ -11,8 +11,9 @@ Make sure you have [Node.js](https://nodejs.org/en/) installed.
 
 ### Other commands...
 ```shell
-$ npm test                      # Run the tests
 $ npm build                     # Create dist folder with index and .js files
+$ npm run test                  # Runs the unit tests
+$ npm run test:watch            # Runs the unit tests with the flag `--watch` (useful for TDD)
 ```
 
 
